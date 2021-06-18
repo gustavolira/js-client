@@ -17,4 +17,4 @@ node \
   spec/protocols_spec.js \
   spec/tests.js \
   spec/utils_spec.js \
-  --captureExceptions --junitreport -forceexit
+  --captureExceptions --junitreport --forceexit
