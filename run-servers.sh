@@ -105,7 +105,7 @@ function startServer()
     echo 'Run server '$nodeName' in '$SERVER_TMP''
 
     if [[ ${isCi} = "--ci" ]]; then
-      nohup $SERVER_TMP/bin/server.sh -Djavax.net.debug -Dorg.infinispan.openssl=false -c ${confPath} -s ${SERVER_TMP}/${nodeName} ${portStr:-""}  --node-name=${nodeName} ${jvmParam:-} &
+      nohup $SERVER_TMP/bin/server.sh -Djavax.net.debug -Dorg.infinispan.openssl=false -c ${confPath} -s ${SERVER_TMP}/${nodeName} ${portStr:-""}  --node-name=${nodeName} ${jvmParam:-} -Djgroups.bind.address=127.0.0.1 &
     else
       ${SERVER_TMP}/bin/server.sh -Djavax.net.debug -Dorg.infinispan.openssl=false -c ${confPath} -s ${SERVER_TMP}/${nodeName} ${portStr:-} --node-name=${nodeName} ${jvmParam:-} &
     fi
